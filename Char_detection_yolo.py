@@ -85,7 +85,8 @@ class CharacterDetection:
             return thresh    
 
     def load_model(self,path, train = False):
-        model = attempt_load(path, map_location='cuda')  # load FP32 model
+        # model = attempt_load(path, map_location='cuda')  # load FP32 model
+        model = attempt_load(path, torch.device('cpu') )  # load FP32 model
         names = model.module.names if hasattr(model, 'module') else model.names  # get class names
         if train:
             model.train()

@@ -3,12 +3,12 @@ import torch
 import os
 import sys
 import argparse
-sys.path.append(os.path.abspath('../yolov5'))
-from utils.general import non_max_suppression, scale_coords
+sys.path.append(os.path.abspath('..'))
+from yolov5.utils.general import non_max_suppression, scale_coords
 # from ai_core.object_detection.yolov5_custom.od.data.datasets import letterbox
 from typing import List
 # from dynaconf import settings
-from models.experimental import attempt_load
+from yolov5.models.experimental import attempt_load
 import cv2
 
 class Detection:
