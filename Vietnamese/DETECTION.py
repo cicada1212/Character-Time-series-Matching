@@ -142,7 +142,8 @@ if __name__ == '__main__':
             resized_img=cv2.putText(resized_img, "{}".format(name), (int(box[0]), int(box[1])-3),
                                     cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                                     (255, 0, 255), 2)
+            print(name)
             resized_img = cv2.rectangle(resized_img, (int(box[0]),int(box[1])), (int(box[2]),int(box[3])), (0,0,255), 1)
-        if not os.path.exists(os.path.join('out')):
-            os.makedirs(os.path.join('out'))
-        cv2.imwrite(os.path.join('out',img_name),resized_img)
+        if not os.path.exists(os.path.join('detection_out')):
+            os.makedirs(os.path.join('detection_out'))
+        cv2.imwrite(os.path.join('detection_out',img_name),resized_img)

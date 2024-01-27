@@ -24,7 +24,7 @@ class CharacterDetection:
 
         return results, resized_img
     
-    def preprocess_image(self, original_image, size=(128, 128), device='cuda'):
+    def preprocess_image(self, original_image, size=(128, 128), device='cpu'):
 
         resized_img = self.ResizeLetter(original_image,size)
         # print("resized_img.shape",resized_img.shape)
